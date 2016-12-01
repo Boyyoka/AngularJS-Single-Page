@@ -1,0 +1,43 @@
+<div id="header">
+    <div class="left">
+        <a href="#">
+            <div class="icon">
+                <div class="span_left">
+                    <div class="yellow">Q</div>uote4
+                </div>
+                <div class="span_right">
+                    <div class="yellow">Q</div>uote
+                </div>
+                       
+                <div class="clear"></div>
+            </div>
+        </a>
+    </div>
+    <div class="right">
+	    <form ng-submit="dictionary.addWord()">
+		    <input class="form-control" type="text" ng-model="dictionary.text" size="40" placeholder="Check it out!" />
+		    <input class="btn btn-primary" type="submit" value="add" />
+	    </form>
+    </div>
+    <div class="clear"></div>
+    <ul class="menu">
+        <li class=""><a href="#/quotes"><img class="home" ng-src="/app/content/images/home2.png" /></a></li>
+        <li class=""><a href="#/about">About</a></li>
+    </ul>
+</div>
+<div id="wrapper">
+    <div class="clear"></div>
+    <div class="content">
+        <a ng-repeat="quote in ocw.quotes" href="#/quotes/{{quote.text}}">
+            <div class="box">
+                <span>{{quote.text}}</span>
+            </div>
+        </a>
+        <a ng-repeat="word in dictionary.words" href="#/quotes/{{word.text}}"> 
+            <div class="box">
+                <span>U {{word.text}}</span>
+            </div>
+        </a>
+        <div class="clear"></div>
+    </div>
+</div>
